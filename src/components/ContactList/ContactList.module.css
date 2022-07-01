@@ -1,16 +1,60 @@
-.list {
-    text-align: center;
-    list-style: none;
+.contacts {
+  width: 600px;
 }
-.item{
-    color: red;
-    margin-top: 10px;
-    font-size: x-large;
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  padding-left: 25px;
+  background-color: #558cdd;
+  border-radius: 50px;
+  border: 1px solid #4e7fca;
+  margin: 8px;
 }
-.button{
-    color: red;
-    margin-left: 15px;
-    padding: 8px 20px;
-    border-radius: 10px;
-    border-color: red;
+
+.name {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #dcf0f0;
+}
+
+.tel {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #050505;
+}
+
+/* ====================== button delete =====================*/
+
+.btnDel {
+  background: linear-gradient(to right, #fc888e 0%, #ea2e2e 50%, #fc888e 100%);
+  background-size: 200%;
+  background-position: 100%;
+  color: #ccffff;
+  padding: 13px 25px;
+  border-radius: 2em;
+  display: inline-block;
+  box-shadow: 0 0 20px #240812;
+  text-shadow: 0 0 5px #000;
+  transition: all 0.7s;
+  border: solid 1px #777f8b;
+  cursor: pointer;
+}
+
+.btnDel:hover {
+  background: linear-gradient(to right, #fc888e 0%, #ea2e2e 50%, #fc888e 100%);
+  background-size: 200%;
+  background-position: 0px;
+  box-shadow: 0 0 40px #ff7755;
+  color: #ccffff;
+  text-shadow: 0 0 30px #000000;
+  border: solid 1px #ccffff;
 }

@@ -1,26 +1,33 @@
-import { useEffect } from 'react';
-import s from './ContactList.module.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { phonebookSelector, phonebookOperation } from '../../redux/contacts/phone-book';
+import React from 'react';
+import { connect } from 'react-redux';
 
-export default function ContactList() {
-    const contacts = useSelector(phonebookSelector.getFilterContacts);
-    const dispatch = useDispatch();
+import phoneOperations from '../../redux/phoneOperations';
+import phoneSelectors from '../../redux/phoneSelectors';
 
-    useEffect(() => {
-        dispatch(phonebookOperation.fetchContacts());
-    }, [dispatch]);
+import s from './ContactList.module.css';
 
-    return (
-        <ul className={s.list}>
-            {contacts.map(({ id, name, number }) => (
-                <li key={id} className={s.item}>
-                    {name}: {number}
-                    <button onClick={() => dispatch(phonebookOperation.deleteContact(id))} type="button" className={s.button}>DELETE</button>
+const ContactList = ({ contacts, onDeleteContacts }) => {
+  return (
+    <ul className={s.contacts}>
+      {contacts.map(({ id, name, number }) => (
+        <li className={s.item} key={id}>
+          <p className={s.name}>{name}</p>
+          <p className={s.tel}>{number}</p>
+          <button className={s.btnDel} onClick={() => onDeleteContacts(id)}>
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
-                </li>
+const mapStateToProps = state => ({
+  contacts: phoneSelectors.getVisisbleContacts(state),
+});
 
-            ))}
-        </ul>
-    );
-}
+const mapDispatchToProps = dispatch => ({
+  onDeleteContacts: id => dispatch(phoneOperations.deleteContacts(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList);

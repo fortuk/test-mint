@@ -1,21 +1,53 @@
 .form {
-    text-align: center;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .label {
-    margin-right: 20px;
-    color: red;
+  display: flex;
+  color: #132525;
+  font-weight: 600;
+  font-size: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .input {
-    margin-left: 10px;
-    border-radius: 15px;
-    border-color: green;
-    padding: 7px;
+  margin-left: 10px;
+  width: 250px;
+  padding: 0 20px;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
-.button {
-    padding: 10px 20px;
-    background-color: green;
-    border-radius: 10px;
+/* ==================buttom  'add contact' ==================*/
+.btnAdd {
+  margin: auto;
+  background: linear-gradient(to right, #a188fc 0%, #2eeade 50%, #a188fc 100%);
+  background-size: 200%;
+  background-position: 100%;
+  color: #ccffff;
+  padding: 1em 3em;
+  border-radius: 2em;
+  display: inline-block;
+  box-shadow: 0 0 20px #229999;
+  text-shadow: 0 0 5px #000;
+  transition: all 0.7s;
+  border: solid 1px #777f8b;
+  cursor: pointer;
+}
+
+.btnAdd:hover {
+  background: linear-gradient(to right, #a188fc 0%, #2eeade 50%, #a188fc 100%);
+  background-size: 200%;
+  background-position: 0px;
+  box-shadow: 0 0 40px #55ffff;
+  color: #ccffff;
+  text-shadow: 0 0 30px #000000;
+  border: solid 1px #ccffff;
 }
